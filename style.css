@@ -15,27 +15,19 @@
 }
 :root {
   /* Color */
-  --color-white: #ffffff;
+  --color-white: #ffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #dbdbdb;
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
   --color-dark-grey: #4d4d4d;
-  --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #73aace;
-  --color-yellow: #fff7d1;
-  --color-orange: #fb8c00;
   --color-black: #000000;
-  --color-light-blue: #e5ffff;
-  --color-dark-Emerald: #00acc1;
 
   /* Font size */
   --font-large: 48px;
   --font-medium: 28px;
   --font-regular: 18px;
-  --font-small: 16px;
-  --font-micro: 14px;
 
   /* Font weight */
   --weight-bold: 700;
@@ -44,9 +36,6 @@
 
   /* size */
   --size-border-raidus: 4px;
-
-  /* Animation */
-  --animation-duration: 300ms;
 }
 
 /* Universal tags */
@@ -64,6 +53,7 @@ a {
 ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 /* Typography */
@@ -118,28 +108,25 @@ button {
   display: flex;
   position: fixed;
   width: 100%;
-  height: 60px;
-  justify-content: space-between;
   background-color: tan;
   align-items: center;
   transition: all var(--animation-duration) ease-in;
   z-index: 1;
-  will-change: contents;
 }
+
 #navbar.navbar__dark {
   background-color: tan;
 }
 
 .navbar__menu {
   display: flex;
-  margin-right: 10px;
+  margin: 0 auto;
 }
+
 .navbar__logo {
   position: relative;
   left: 25px;
   color: var(--color-light-white);
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
   font-size: 0;
 }
 .navbar__logo img {
@@ -153,16 +140,20 @@ button {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: var(--size-border-raidus);
+  font-size: 1.4rem;
+  font-weight: 900;
 }
+
 .navbar__menu__item.active {
   color: black;
 }
+
 .navbar__menu__item:hover {
   background-color: #9e9e9e;
 }
 
-.navbar__twitter__img {
-  width: 20px;
+.navbar__menu .navbar__twitter__img {
+  width: 30px;
   margin-top: 10px;
 }
 
@@ -296,183 +287,59 @@ section {
 
 .audition.wrapper em {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   color: indianred;
 }
 
 .audition.wrapper ul {
   color: var(--color-light-grey);
+  margin: 0px 50px;
 }
 
 .audition.wrapper .title {
   color: var(--color-pink);
 }
 
-/* About */
-.about__majors {
-  display: flex;
-  justify-content: space-between;
-  margin: 80px 0;
-  text-align: center;
+/* Story */
+#story {
+  background: url("./images/worldview.png") center/cover no-repeat;
 }
 
-.major__icon {
-  width: 170px;
-  height: 170px;
-  line-height: 170px;
-  font-size: 70px;
-  color: var(--color-orange);
-  border: 1px solid var(--color-orange);
-  border-radius: 50%;
-  margin-bottom: 16px;
-}
-.major__title,
-.major__description {
-  color: var(--color-dark-grey);
-}
-.major__description {
-  font-size: var(--font-small);
+#story h1 {
+  padding-top: 40px;
+  color: white;
 }
 
-.major__icon svg {
-  transition: all var(--animation-duration) ease;
-}
-.major__icon:hover svg {
-  color: var(--color-dark-pink);
-  transform: rotate(-30deg) scale(1.1);
+#app {
+  height: 80vh;
+  perspective: 1600px;
 }
 
-.job {
-  display: flex;
-  align-items: center;
-  margin-top: 24px;
-}
-.job__description {
-  margin: 0 16px;
-  text-align: left;
-}
-.job img {
-  width: 100px;
-  height: 100px;
-}
-.job__name,
-.job__period {
-  color: var(--color-light-grey);
-}
-.job__name {
-  font-size: var(--font-small);
-}
-.job__period {
-  font-size: var(--font-micro);
+.list-item {
+  position: fixed;
+  width: 340px;
+  height: 400px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  transition: 0.5s;
 }
 
-/* Work */
-.work__categories {
-  margin: 12px 0;
-}
-.category__btn {
-  border: 1px solid var(--color-dark-white);
-  border-radius: var(--size-border-raidus);
-  font-size: var(--font-regular);
-  padding: 8px 48px;
-  width: 225px;
-}
-.category__btn.selected,
-.category__btn:hover {
-  background-color: var(--color-dark-pink);
-  color: var(--color-white);
-  cursor: pointer;
-}
-
-.category__btn.selected .category__count,
-.category__btn:hover .category__count {
-  opacity: 1;
-  top: 0;
-}
-
-.category__count {
-  background-color: var(--color-orange);
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
-  display: inline-block;
-  position: relative;
-  top: -20px;
-  left: 4px;
-  opacity: 0;
-  transition: all var(--animation-duration) ease-in;
-}
-
-.work__projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  opacity: 1;
-  transition: all var(--animation-duration) ease-out;
-}
-
-.project {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 230px;
-  margin: 2px;
-  padding: 30px;
-  background-color: var(--color-light-white);
-}
-
-.project.invisible {
-  display: none;
-}
-
-.work__projects.anim-out {
-  opacity: 0;
-  transform: scale(0.9) translateY(40px);
-}
-
-.project__img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.project__description {
+.list-item li {
   position: absolute;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all var(--animation-duration) ease-in;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.project:hover .project__description {
-  opacity: 0.8;
-  transform: translateY(0px);
-}
-
-.project__description h3,
-span {
-  color: var(--color-white);
-}
-
-.project__description h3:after {
-  content: "";
-  display: block;
-  position: relative;
-  left: 50%;
-  width: 40px;
-  height: 2px;
-  margin-left: -12px;
-  margin-top: 8px;
-  background-color: var(--color-pink);
+.list-item li img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 /* Contact */
@@ -536,15 +403,23 @@ span {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  #navbar {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+  }
+
   .navbar__toggle__button {
     display: block;
-    padding: 16px;
+    padding: 14px;
   }
+
   .navbar__menu.open {
     display: block;
-    position: relative;
-    top: 140px;
-    left: -100px;
+    /* position: relative; */
+    /* top: 140px; */
+    /* left: -100px; */
     margin: 0%;
     background-color: #bd7838;
   }
@@ -559,6 +434,7 @@ span {
     width: 100%;
     display: none;
   }
+
   .about__majors {
     flex-direction: column;
   }

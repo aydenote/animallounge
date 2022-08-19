@@ -14,6 +14,15 @@
   font-style: normal;
 }
 
+/* 네브바 폰트 */
+@font-face {
+  font-family: "Y_Spotlight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: "KOTRAHOPE";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2")
@@ -112,6 +121,7 @@ button {
   display: flex;
   justify-content: center;
 }
+
 #navbar {
   display: flex;
   position: fixed;
@@ -120,6 +130,7 @@ button {
   align-items: center;
   transition: all var(--animation-duration) ease-in;
   z-index: 1;
+  font-family: "Y_Spotlight";
 }
 
 #navbar.navbar__dark {
@@ -160,9 +171,20 @@ button {
   background-color: #9e9e9e;
 }
 
+.navbar__twitter__link {
+  width: 25px;
+  position: absolute;
+  right: 35px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar__menu .navbar__twitter__img {
-  width: 30px;
-  margin-top: 10px;
+  width: 25px;
+  margin-top: 12px;
 }
 
 .navbar__toggle__button {
@@ -177,11 +199,12 @@ button {
 #home {
   background: url("images/home.gif") center/cover no-repeat;
   height: 600px;
+  position: relative;
 }
 
 .home__avatar {
   position: absolute;
-  top: calc(50% + -40px);
+  top: 50%;
   left: 50%;
   width: 50%;
   transform: translate(-50%, -50%);
@@ -255,7 +278,7 @@ section {
 }
 
 #audition .subtitle {
-  margin-top: 60px;
+  margin-top: 40px;
   color: black;
 }
 
@@ -269,12 +292,17 @@ section {
   border-radius: 10px;
   max-width: 400px;
   margin: auto;
+  margin-top: 40px;
 }
 
 .application p {
   border-bottom: 1px solid white;
   padding-bottom: 10px;
   margin: 20px 0px;
+  font-size: 25px;
+}
+
+.application span {
   font-size: 25px;
 }
 
@@ -290,7 +318,7 @@ section {
   line-height: 1.5;
   max-width: 700px;
   margin: auto;
-  padding: 15px 0px;
+  padding: 30px 0px;
 }
 
 .audition.wrapper em {
@@ -301,7 +329,8 @@ section {
 
 .audition.wrapper ul {
   color: var(--color-light-grey);
-  margin: 0px 50px;
+  margin: 20px 40px;
+  word-break: keep-all;
 }
 
 .audition.wrapper .title {
@@ -310,12 +339,12 @@ section {
 
 /* Story */
 #story {
-  background: url("./images/worldview.png") center/cover no-repeat;
+  background: url("./images/story8.gif") center/cover no-repeat;
+  padding-bottom: 60px;
 }
 
 #story h1 {
   padding: 40px 0px;
-  color: white;
 }
 
 /* Contact */
@@ -373,7 +402,7 @@ section {
 }
 
 .arrow-up.visible {
-  opacity: 1;
+  opacity: 0.7;
   pointer-events: auto;
 }
 
@@ -479,6 +508,13 @@ span {
     display: none;
   }
 
+  .navbar__twitter__link {
+    width: 25px;
+    display: inline-block;
+    position: static;
+    margin: 0px;
+  }
+
   .about__majors {
     flex-direction: column;
   }
@@ -517,11 +553,6 @@ span {
   }
 
   .arrow-up {
-    width: 50px;
-    height: 50px;
-    font-size: 30px;
-    line-height: 50px;
-    right: 16px;
-    bottom: 16px;
+    display: none;
   }
 }

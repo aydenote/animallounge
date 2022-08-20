@@ -48,7 +48,6 @@ arrowUp.addEventListener("click", () => {
 // 스크롤시 해당 Menu item들 색 표시.
 const sectionIds = ["#home", "#story", "#audition", "#contact"];
 const sections = sectionIds.map((id) => document.querySelector(id));
-
 const navItems = sectionIds.map((id) =>
   document.querySelector(`[data-link="${id}"]`)
 );
@@ -56,6 +55,11 @@ const navItems = sectionIds.map((id) =>
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
+  if (selected.dataset.link === "#story") {
+    carousel__content[0].classList.add("fadein");
+  } else {
+    carousel__content[0].classList.remove("fadein");
+  }
   selectedNavItem.classList.remove("active");
   selectedNavItem = selected;
   selectedNavItem.classList.add("active");
@@ -104,4 +108,40 @@ window.addEventListener("wheel", () => {
     selectedNavIndex = navItems.length - 1;
   }
   selectNavItem(navItems[selectedNavIndex]);
+});
+
+// carousel
+const carousel__content = document.querySelectorAll(".carousel__content");
+const carousel__left = document.querySelector(".carousel__left");
+const carousel__right = document.querySelector(".carousel__right");
+
+let move = 0;
+let index = 0;
+carousel__left.addEventListener("click", function () {
+  move += 100;
+  if (move == 100) {
+    move = -400;
+    index = 5;
+  }
+  document.querySelector(
+    ".carousel__container"
+  ).style.transform = `translate(${move}%)`;
+
+  carousel__content[(index -= 1)].classList.add("fadein");
+});
+
+carousel__right.addEventListener("click", function () {
+  move -= 100;
+  if (move == -500) {
+    move = 0;
+    index = -1;
+  }
+  document.querySelector(
+    ".carousel__container"
+  ).style.transform = `translate(${move}%)`;
+
+  // document.querySelector(
+  //   ".carousel__content.fadein"
+  // ).style.transform = `translate(${move}%)`;
+  carousel__content[(index += 1)].classList.add("fadein");
 });

@@ -57,6 +57,11 @@ let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
   if (selected.dataset.link === "#story") {
     carousel__content[0].classList.add("fadein");
+    let text = Array.from(text__container[0].children);
+    text.forEach((item) => {
+      item.style.animation = `fade 1s ${(timer += 1000)}ms forwards`;
+    });
+    timer = 1000;
   } else {
     carousel__content[0].classList.remove("fadein");
   }
@@ -114,9 +119,12 @@ window.addEventListener("wheel", () => {
 const carousel__content = document.querySelectorAll(".carousel__content");
 const carousel__left = document.querySelector(".carousel__left");
 const carousel__right = document.querySelector(".carousel__right");
+const text__container = document.querySelectorAll(".text__container");
 
 let move = 0;
 let index = 0;
+let timer = 0;
+
 carousel__left.addEventListener("click", function () {
   move += 100;
   if (move == 100) {
@@ -128,6 +136,11 @@ carousel__left.addEventListener("click", function () {
   ).style.transform = `translate(${move}%)`;
 
   carousel__content[(index -= 1)].classList.add("fadein");
+  let text = Array.from(text__container[index].children);
+  text.forEach((item) => {
+    item.style.animation = `fade 1s ${(timer += 1000)}ms forwards`;
+  });
+  timer = 1000;
 });
 
 carousel__right.addEventListener("click", function () {
@@ -140,8 +153,10 @@ carousel__right.addEventListener("click", function () {
     ".carousel__container"
   ).style.transform = `translate(${move}%)`;
 
-  // document.querySelector(
-  //   ".carousel__content.fadein"
-  // ).style.transform = `translate(${move}%)`;
   carousel__content[(index += 1)].classList.add("fadein");
+  let text = Array.from(text__container[index].children);
+  text.forEach((item) => {
+    item.style.animation = `fade 1s ${(timer += 1000)}ms forwards`;
+  });
+  timer = 1000;
 });

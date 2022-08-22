@@ -385,6 +385,7 @@ section {
   position: relative;
   vertical-align: middle;
   width: 100%;
+  max-height: 500px;
 }
 
 .inner img {

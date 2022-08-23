@@ -419,7 +419,6 @@ section {
 
 .carousel__content {
   display: none;
-  /* font-size: 1.4em; */
   font-family: "MICEGothic Bold";
 }
 
@@ -444,8 +443,6 @@ section {
 .text__container p,
 .text__container h3 {
   opacity: 0;
-  /* -webkit-transform: scale(0.5); */
-  /* font-size: 1.7vw; */
 }
 
 .line {
@@ -462,12 +459,6 @@ section {
   font-family: "RixYeoljeongdo_Regular";
   font-size: 35px;
   text-shadow: 1px 1px 10px white;
-}
-
-@keyframes fade {
-  to {
-    opacity: 1;
-  }
 }
 
 .carousel__content p {
@@ -655,46 +646,5 @@ section {
 
   .arrow-up {
     display: none;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  .carousel__content h3 {
-    font-size: 25px;
-  }
-
-  .carousel__content p {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 569px) {
-  .carousel__content h3 {
-    font-size: 15px;
-  }
-
-  .carousel__content p {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-width: 459px) {
-  .carousel__content h3 {
-    font-size: 12px;
-  }
-
-  .carousel__content p {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-width: 451px) {
-  .carousel__content h3 {
-    -webkit-transform: scale(0.83);
-  }
-
-  .carousel__content p {
-    -webkit-transform: scale(0.5);
-    line-height: 6px;
   }
 }

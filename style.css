@@ -496,9 +496,13 @@ section {
   overflow: hidden;
 }
 
-.mainImg {
-  animation: main-change 1s ease-in normal forwards;
+.background__img.mainImg {
+  background-image: url("/images/story-cover_main.png");
 }
+
+/* .mainImg {
+  animation: main-change 1s ease-in normal forwards;
+} */
 
 .whaleImg {
   animation: whale-change 1s ease-in normal forwards;
@@ -516,14 +520,14 @@ section {
   animation: crab-change 1s ease-in normal forwards;
 }
 
-@keyframes main-change {
+/* @keyframes main-change {
   0% {
     background-image: url("/images/story-cover.png");
   }
   100% {
     background-image: url("/images/story-cover_main.png");
   }
-}
+} */
 
 @keyframes whale-change {
   0% {

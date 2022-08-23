@@ -58,6 +58,7 @@ const navItems = sectionIds.map((id) =>
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
+  console.log(selected);
   if (selected.dataset.link === "#story") {
     carousel__content[0].classList.add("fadein");
     let text = Array.from(text__container[0].children);

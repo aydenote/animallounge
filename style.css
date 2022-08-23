@@ -24,6 +24,22 @@
 }
 
 @font-face {
+  font-family: "RixYeoljeongdo_Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GenKJwajinOTF-Rg";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GenKJwajinOTF-Rg.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "MICEGothic Bold";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2")
     format("woff2");
@@ -199,15 +215,15 @@ button {
 /* Home */
 #home {
   background: url("images/home.gif") center/cover no-repeat;
-  height: 600px;
+  height: 800px;
   position: relative;
 }
 
 .home__avatar {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
-  width: 50%;
+  width: 40%;
   transform: translate(-50%, -50%);
   opacity: 0.7;
 }
@@ -354,7 +370,8 @@ section {
 
 /* Story */
 #story {
-  background: url("./images/story8.gif") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./images/story8.gif") center/cover no-repeat;
   padding-bottom: 60px;
 }
 
@@ -394,14 +411,12 @@ section {
 
 .carousel__content {
   display: none;
-  background-color: black;
   font-size: 1.4em;
   font-family: "MICEGothic Bold";
 }
 
 .carousel__content.fadein {
   position: absolute;
-  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -409,7 +424,6 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0.8;
   transition: all 1s ease-in;
   white-space: normal;
   word-break: keep-all;
@@ -423,6 +437,7 @@ section {
 .carousel__content h3 {
   position: relative;
   color: white;
+  font-family: "RixYeoljeongdo_Regular";
 }
 
 @keyframes fade {
@@ -431,20 +446,9 @@ section {
   }
 }
 
-.carousel__content h3:after {
-  content: "";
-  display: block;
-  position: relative;
-  left: 50%;
-  width: 40px;
-  height: 2px;
-  margin-left: -18px;
-  margin-top: 8px;
-  background-color: var(--color-pink);
-}
-
 .carousel__content p {
   color: white;
+  font-family: "GenKJwajinOTF-Rg";
 }
 
 .carousel__left {
@@ -463,8 +467,83 @@ section {
     opacity: 0;
   }
   to {
-    opacity: 0.8;
+    opacity: 0;
     transform: none;
+  }
+}
+
+.background__img {
+  width: 100%;
+  background-image: url("/images/story-cover.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 82%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.mainImg {
+  animation: main-change 1s ease-in normal forwards;
+}
+
+.whaleImg {
+  animation: whale-change 1s ease-in normal forwards;
+}
+
+.albatrossImg {
+  animation: albatross-change 1s ease-in normal forwards;
+}
+
+.crocodileImg {
+  animation: crocodile-change 1s ease-in normal forwards;
+}
+
+.crabImg {
+  animation: crab-change 1s ease-in normal forwards;
+}
+
+@keyframes main-change {
+  0% {
+    background-image: url("/images/story-cover.png");
+  }
+  100% {
+    background-image: url("/images/story-cover_main.png");
+  }
+}
+
+@keyframes whale-change {
+  0% {
+    background-image: url("/images/story-cover.png");
+  }
+  100% {
+    background-image: url("/images/story-cover_whale.png");
+  }
+}
+
+@keyframes albatross-change {
+  0% {
+    background-image: url("/images/story-cover.png");
+  }
+  100% {
+    background-image: url("/images/story-cover_albatross.png");
+  }
+}
+
+@keyframes crocodile-change {
+  0% {
+    background-image: url("/images/story-cover.png");
+  }
+  100% {
+    background-image: url("/images/story-cover_crocodile.png");
+  }
+}
+
+@keyframes crab-change {
+  0% {
+    background-image: url("/images/story-cover.png");
+  }
+  100% {
+    background-image: url("/images/story-cover_crab.png");
   }
 }
 

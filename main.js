@@ -62,6 +62,7 @@ function selectNavItem(selected) {
       item.style.animation = `fade 1s ${(timer += 1000)}ms forwards`;
     });
     timer = 1000;
+    backgroundImg[0].classList.add("mainImg");
   } else {
     carousel__content[0].classList.remove("fadein");
   }
@@ -120,6 +121,11 @@ const carousel__content = document.querySelectorAll(".carousel__content");
 const carousel__left = document.querySelector(".carousel__left");
 const carousel__right = document.querySelector(".carousel__right");
 const text__container = document.querySelectorAll(".text__container");
+const inner__img = document.querySelectorAll(".inner img");
+const backgroundImg = document.querySelectorAll(".background__img");
+let backgrouondArr = Array.from(backgroundImg);
+
+let imgSrc = ["mainImg", "whaleImg", "albatrossImg", "crocodileImg", "crabImg"];
 
 let move = 0;
 let index = 0;
@@ -136,6 +142,7 @@ carousel__left.addEventListener("click", function () {
   ).style.transform = `translate(${move}%)`;
 
   carousel__content[(index -= 1)].classList.add("fadein");
+  backgrouondArr[index].classList.add(imgSrc[index]);
   let text = Array.from(text__container[index].children);
   text.forEach((item) => {
     item.style.animation = `fade 1s ${(timer += 1000)}ms forwards`;
@@ -154,6 +161,8 @@ carousel__right.addEventListener("click", function () {
   ).style.transform = `translate(${move}%)`;
 
   carousel__content[(index += 1)].classList.add("fadein");
+  backgrouondArr[index].classList.add(imgSrc[index]);
+
   let text = Array.from(text__container[index].children);
   text.forEach((item) => {
     item.style.animation = `fade 1s ${(timer += 1000)}ms forwards`;

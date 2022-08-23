@@ -1,5 +1,8 @@
 "use strict";
 
+//새로고침 시 항상 top:0 위치로 이동된다.
+history.scrollRestoration = "manual";
+
 // Navbar 투명화
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;

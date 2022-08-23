@@ -429,9 +429,14 @@ section {
   word-break: keep-all;
 }
 
+.text__container {
+  padding: 0 20px;
+}
+
 .text__container p,
 .text__container h3 {
   opacity: 0;
+  font-size: 1.7vw;
 }
 
 .carousel__content h3 {

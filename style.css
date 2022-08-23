@@ -249,7 +249,15 @@ section {
   padding-top: 40px;
 }
 
+/* #audition .title {
+  margin-top: 20px;
+} */
+
 #audition .subtitle {
+  color: black;
+}
+
+#audition .subtitle:not(:first-of-type) {
   margin-top: 40px;
   color: black;
 }
@@ -411,7 +419,7 @@ section {
 
 .carousel__content {
   display: none;
-  font-size: 1.4em;
+  /* font-size: 1.4em; */
   font-family: "MICEGothic Bold";
 }
 
@@ -436,13 +444,24 @@ section {
 .text__container p,
 .text__container h3 {
   opacity: 0;
-  font-size: 1.7vw;
+  /* -webkit-transform: scale(0.5); */
+  /* font-size: 1.7vw; */
+}
+
+.line {
+  margin-top: 15px;
+}
+
+.text__container strong {
+  color: rgb(225, 159, 0);
 }
 
 .carousel__content h3 {
   position: relative;
   color: white;
   font-family: "RixYeoljeongdo_Regular";
+  font-size: 35px;
+  text-shadow: 1px 1px 10px white;
 }
 
 @keyframes fade {
@@ -461,7 +480,6 @@ section {
 }
 
 .fadein {
-  font-size: medium;
   position: relative;
   overflow: hidden;
   animation: fadein 1s ease-in-out;
@@ -609,6 +627,14 @@ section {
     flex-grow: 1;
   }
 
+  .carousel__content h3 {
+    font-size: 30px;
+  }
+
+  .carousel__content p {
+    font-size: 16px;
+  }
+
   .testimonial {
     flex-direction: column;
     align-items: center;
@@ -629,5 +655,46 @@ section {
 
   .arrow-up {
     display: none;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .carousel__content h3 {
+    font-size: 25px;
+  }
+
+  .carousel__content p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+  .carousel__content h3 {
+    font-size: 15px;
+  }
+
+  .carousel__content p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 459px) {
+  .carousel__content h3 {
+    font-size: 12px;
+  }
+
+  .carousel__content p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 451px) {
+  .carousel__content h3 {
+    -webkit-transform: scale(0.83);
+  }
+
+  .carousel__content p {
+    -webkit-transform: scale(0.5);
+    line-height: 6px;
   }
 }
